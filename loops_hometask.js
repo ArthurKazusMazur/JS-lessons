@@ -30,7 +30,12 @@ const evenNumbers = function (arr) {
   }
   console.log(array1.length);
 };
-
+ 
+/*
+Технически - это верное решение, оно решает поставленную задачу. Вот только лучшим способом было бы не объявлять пустой массив, 
+а переменную - счетчик, затем, вместо использования .push(), увеличивать счетчик на единицу, когда во время прохода цикла находишь четное число.
+Ну, и в качестве результата - возвращать значение счетчика.
+*/
 evenNumbers(numbers);
 
 // Задача 3: Вывод чисел от N до 1 в обратном порядке:
@@ -47,6 +52,10 @@ const reverseNumbers = function () {
   alert(`Numbers are ${reverseArr}`);
 };
 
+/*
+Здесь тоже технически решено верно. Но, подумай, что если в качестве начального значения для i выбрать не 1, а userNumber? 
+А счетчик i-- уменьшать до 0? 
+*/
 reverseNumbers();
 
 // Задача 4: Проверка на палиндром*:
@@ -56,11 +65,17 @@ reverseNumbers();
 const isPalindrome = function () {
   const userInput = prompt(
     "Input some a word or some words to learn wether your it is a palindrome"
-  ).replaceAll(" ", "");
+  ).replaceAll(" ", ""); 
+
   const userInputArr = userInput.split("");
-
+ /*
+ Хорошо, что предусмотрела наличие пробелов. 
+ */ 
   let userReverseArr = [];
-
+ /* 
+ И вот тут можно было даже ни использовать массивы, а только 
+ продолжать со строками и их методами. Знаю, что я этого не рассказывал, но ведь это задача со *.
+ */
   for (let i = 0; i < userInputArr.length; i++) {
     userReverseArr.unshift(userInputArr[i]);
   }
